@@ -400,7 +400,7 @@
             margin-bottom: var(--mb-3);
         }
 
-        .contact__button {
+        /* .contact__button {
 
             display: block;
             border: none;
@@ -408,6 +408,15 @@
             outline: none;
             font-size: var(--normal-font-size);
             cursor: pointer;
+        } */
+
+        button{
+            font-size: var(--normal-font-size);
+            border: none;
+            outline: none;
+            border-radius: 1rem;
+            padding: .75rem 1.5rem;
+            color: rgba(10, 0, 0, 0.664);
         }
 
         .footer {
@@ -617,7 +626,7 @@
             <div class="home__data">
                 <h1 class="home__title">Hey there, <br>I'm <span class="home__title-color">Anhad</span> <br>Web Designer.
                 </h1>
-                <a href="https://drive.google.com/file/d/1HM10akWggt7IJhZN_lSqtjsfm6VAIjR_/view?usp=sharing" target="_blank" class="button">Resume</a>
+                <a href="https://drive.google.com/file/d/1oSG2WR8_8edAayijrtQ48iz9aKVe69pA/view?usp=sharing" target="_blank" class="button">Download Resumé</a>
             </div>
 
             <div class="home__social">
@@ -650,9 +659,9 @@
                         gives me the Holistic pleasure of combining my passion for a purpose. 🎸🎻 <br> <br> Being a
                         <span>Naval brat</span> and an outdoor person, adventure sports like deep-sea diving,
                         mountaineering, sailing and wildlife camps have been part of my growing up years. ⛺⛵. <br> <br>
-                        I am a <span>spirited sportsman</span> and a <span>fitness freak</span> who loves to play <span>
+                        I'm a <span>spirited sportsman</span> and a <span>fitness freak</span> who loves to play <span>
                             football and basketball</span>. ⚽🏀 I have represented my school team at various
-                        <span>interschool</span> sports events. <br><br>I love <span>tea</span>, as how can you call yourself a programmer if you aren't hooked on to tea xD <br><br>
+                        <span>interschool</span> sports events. <br><br>
                         I see myself as a successful <span>software engineer and a web developer</span> in the future
                         🖥️
                     </p>
@@ -760,23 +769,23 @@
                 </div>
 
                 <div class="project__img">
-                    <a href="">
+                    <a href="https://07anhad.github.io/drumKit/" target="_blank">
                         <img src="./IMAGES/drumkitprojectCrop.png" alt="">
 
                     </a>
                 </div>
 
                 <div class="project__img">
-                    <img src="./IMAGES/parallaxscrollproject.png" alt="">
-                </div>
-
-
-                <div class="project__img">
-                    <a href="">
+                    <a href="https://07anhad.github.io/todolist.github.io/" target="_blank">
                         <img src="./IMAGES/toDoListProject.png" alt="">
 
                     </a>
                 </div>
+                
+                <div class="project__img">
+                    <img src="./IMAGES/parallaxscrollproject.png" alt="">
+                </div>
+
 
                 <div class="project__img">
                     <img src="./IMAGES/scrollrevealprojectCrop.png" alt="">
@@ -786,16 +795,22 @@
             </div>
         </section>
 
+        <!-- change mail from text to mail.. and copy this section to gihub -->
+
         <section class="contact section" id="contact">
             <h2 class="section-title">Contact me</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Enter" class="contact__button button">
+                <form action="https://formsubmit.co/anhadparashar07@gmail.com" class="contact__form" id="contactForm" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://07anhad.github.io/portfolio.github.io/thankyou.html">
+                    <input type="hidden" name="_subject" value="New submission Portfolio!">
+                    <input type="text" placeholder="Name" class="contact__input" id="name" required>
+                    <input type="email" placeholder="Email" class="contact__input" id="mail" required>
+                    <textarea name="message" id="" cols="0" rows="10" class="contact__input" id="message" placeholder="Write your message"></textarea>
+                    <button type="submit">Send</button>
                 </form>
+                    
             </div>
         </section>
 
@@ -863,7 +878,7 @@
         const sr = ScrollReveal({
             // origin: 'top',
             distance: '60px',
-            duration: 2000,
+            duration: 1000,
             delay: 500,
             reset: true
         });
@@ -873,8 +888,31 @@
         sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', { origin: 'left', delay: 200 });
         sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
         sr.reveal('.project__img', { delay: 400 });
-        sr.reveal('.home__social-icon i', { delay: 900 });
+        sr.reveal('.home__social-icon i', { delay: 300 });
         sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+
+
+        document.getElementById('contactForm').addEventListener('submit',submitForm);
+
+        function submitForm(e){
+            e.preventDefault();
+            // console.log(123);
+
+            var name = (document.getElementById('name'||{}).value)||"";
+            var email = (document.getElementById('mail'||{}).value)||"";
+            var message = (document.getElementById('message'||{}).value)||"";
+             
+            console.log(name);
+        }
+
+        //function to get form values 
+
+
+
+        // function getInputVal(id){
+        //     return document.getElementById(id).value;
+        // }
+
     </script>
     <!-- <script src="./main.js"></script> -->
 </body>
