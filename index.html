@@ -221,7 +221,7 @@
 
         .home__title-color {
             color: rgb(138, 168, 177);
-            font-weight:900 ;
+            font-weight: 900;
         }
 
         .home__social {
@@ -410,7 +410,7 @@
             cursor: pointer;
         } */
 
-        button{
+        button {
             font-size: var(--normal-font-size);
             border: none;
             outline: none;
@@ -441,6 +441,47 @@
             color: #fff;
             /* padding:var(--mb-2); */
         }
+
+        #status {
+            color: black;
+            width: 100%;
+            max-width: 200px;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            /* margin-top: var(--mb-2); */
+            border-radius: 8px;
+        }
+
+        #status.success {
+            background-color: rgb(208, 238, 162);
+            animation: status 4s ease forwards;
+        }
+
+        #status.error {
+            background-color: rgba(184, 0, 0, 0.671);
+            color: rgb(31, 0, 0);
+            animation: status 4s ease forwards;
+        }
+
+        @keyframes status {
+            0% {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            90% {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            100% {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+
+
 
         @media screen and (min-width:768px) {
             body {
@@ -624,16 +665,22 @@
     <main class="1-main">
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hey there, <br>I'm <span class="home__title-color">Anhad</span> <br>Web Designer.
+                <h1 class="home__title">Hey there, <br>I'm <span class="home__title-color">Anhad</span> <br>Web
+                    Designer.
                 </h1>
-                <a href="https://drive.google.com/file/d/1oSG2WR8_8edAayijrtQ48iz9aKVe69pA/view?usp=sharing" target="_blank" class="button">Download Resumé</a>
+                <a href="https://drive.google.com/file/d/1oSG2WR8_8edAayijrtQ48iz9aKVe69pA/view?usp=sharing"
+                    target="_blank" class="button">Download Resumé</a>
             </div>
 
             <div class="home__social">
-                <a href="https://github.com/07anhad" target="_blank" class="home__social-icon"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/anhad7.music/" target="_blank" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
-                <a href="https://www.linkedin.com/in/anhad-parashar-6b18a3202/" target="_blank"  class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.youtube.com/channel/UCEvOvmEPcBnEoc2UARZjw3Q" target="_blank" class="home__social-icon"><i class='bx bxl-youtube'></i></a>
+                <a href="https://github.com/07anhad" target="_blank" class="home__social-icon"><i
+                        class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/anhad7.music/" target="_blank" class="home__social-icon"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/anhad-parashar-6b18a3202/" target="_blank"
+                    class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.youtube.com/channel/UCEvOvmEPcBnEoc2UARZjw3Q" target="_blank"
+                    class="home__social-icon"><i class='bx bxl-youtube'></i></a>
             </div>
 
             <div class="home__img">
@@ -675,7 +722,8 @@
             <div class="skills__container bd-grid">
                 <div>
                     <h2 class="skills__subtitle">Professional Skills</h2>
-                    <p class="skills__text">Still a noob developer, but familiar with the following languages and styling ;)</p>
+                    <p class="skills__text">Still a noob developer, but familiar with the following languages and
+                        styling ;)</p>
 
                     <div class="skills__data">
                         <div class="skills__names">
@@ -769,6 +817,12 @@
                 </div>
 
                 <div class="project__img">
+                    <a href="https://07anhad.github.io/30photos-api/" target="_blank">
+                        <img src="./IMAGES/shades Cropped.png" alt="">
+                    </a>
+                </div>
+
+                <div class="project__img">
                     <a href="https://07anhad.github.io/drumKit/" target="_blank">
                         <img src="./IMAGES/drumkitprojectCrop.png" alt="">
 
@@ -781,7 +835,7 @@
 
                     </a>
                 </div>
-                
+
                 <!-- <div class="project__img">
                     <img src="./IMAGES/parallaxscrollproject.png" alt="">
                 </div>
@@ -801,14 +855,17 @@
             <h2 class="section-title">Contact me</h2>
 
             <div class="contact__container bd-grid">
-                <form action="mail.php" class="contact__form" method="post" id="contactForm">
+                <form action="https://formspree.io/f/xqkneqbj" class="contact__form" method="POST" id="my-form">
                     <input type="text" name="name" placeholder="Name" class="contact__input" id="name" required>
-                    <input type="email" name="emailaddress" placeholder="Email" class="contact__input" id="mail" required>
-                    <textarea name="message" name="message" id="" cols="0" rows="10" class="contact__input" id="message" placeholder="Write your message"></textarea>
-                    <button type="submit" class="button">Send</button>
+                    <input type="email" name="emailaddress" placeholder="Email" class="contact__input" id="mail"
+                        required>
+                    <textarea name="message" name="message" id="" cols="0" rows="10" class="contact__input" id="message"
+                        placeholder="Write your message"></textarea>
+                    <button onclick="showAlert()" type="submit">Send</button>
                 </form>
-                    
+
             </div>
+            <div id="status" class="success">Success</div>
         </section>
 
     </main>
@@ -817,9 +874,12 @@
         <p class="footer__title">Anhad Parashar</p>
 
         <div class="footer__social">
-            <a href="https://github.com/07anhad" target="_blank" class="home__social-icon"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/anhad7.music/" target="_blank" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/channel/UCEvOvmEPcBnEoc2UARZjw3Q" target="_blank" class="home__social-icon"><i class='bx bxl-youtube'></i></a>
+            <a href="https://github.com/07anhad" target="_blank" class="home__social-icon"><i
+                    class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/anhad7.music/" target="_blank" class="home__social-icon"><i
+                    class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/channel/UCEvOvmEPcBnEoc2UARZjw3Q" target="_blank"
+                class="home__social-icon"><i class='bx bxl-youtube'></i></a>
         </div>
 
         <p>&#169; 2022 copyright subjected to Anhad Parashar</p>
@@ -886,21 +946,21 @@
         sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
         sr.reveal('.project__img', { delay: 400 });
         sr.reveal('.home__social-icon i', { delay: 300 });
-        sr.reveal('.skills__data, .work__img, .contact__input, .button', { interval: 200 });
+        sr.reveal('.skills__data, .work__img, .contact__input, button', { interval: 200 });
 
 
-        document.getElementById('contactForm').addEventListener('submit',submitForm);
+        // document.getElementById('contactForm').addEventListener('submit',submitForm);
 
-        function submitForm(e){
-            e.preventDefault();
-            // console.log(123);
+        // function submitForm(e){
+        //     e.preventDefault();
+        //     // console.log(123);
 
-            var name = (document.getElementById('name'||{}).value)||"";
-            var email = (document.getElementById('mail'||{}).value)||"";
-            var message = (document.getElementById('message'||{}).value)||"";
-             
-            console.log(name);
-        }
+        //     var name = (document.getElementById('name'||{}).value)||"";
+        //     var email = (document.getElementById('mail'||{}).value)||"";
+        //     var message = (document.getElementById('message'||{}).value)||"";
+
+        //     console.log(name);
+        // }
 
         //function to get form values 
 
@@ -909,6 +969,34 @@
         // function getInputVal(id){
         //     return document.getElementById(id).value;
         // }
+        function showAlert() {
+            var myText = "Thank you for your subission!";
+            alert(myText);
+        }
+
+        var form = document.getElementById("my-form");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("status ");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                form.reset()
+                status.classList.add('success')
+                status.innerHTML = "Thanks for your submission!";
+            }).catch(error => {
+                status.classList.add('error')
+
+                status.innerHTML = "Oops! There was a problem!"
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
 
     </script>
     <!-- <script src="./main.js"></script> -->
